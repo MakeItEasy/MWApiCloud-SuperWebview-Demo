@@ -1,0 +1,22 @@
+PODS:
+  - MWApiCloud-SuperWebview (0.1.0)
+
+DEPENDENCIES:
+  - MWApiCloud-SuperWebview (from `https://github.com/MakeItEasy/MWApiCloud-SuperWebview.git`, tag `0.1.0`)
+
+EXTERNAL SOURCES:
+  MWApiCloud-SuperWebview:
+    :git: https://github.com/MakeItEasy/MWApiCloud-SuperWebview.git
+    :tag: 0.1.0
+
+CHECKOUT OPTIONS:
+  MWApiCloud-SuperWebview:
+    :git: https://github.com/MakeItEasy/MWApiCloud-SuperWebview.git
+    :tag: 0.1.0
+
+SPEC CHECKSUMS:
+  MWApiCloud-SuperWebview: 63af563d42c2e05e214ea9956455b170c4bc39fe
+
+PODFILE CHECKSUM: 6f1cf959b48d60ed6c2062f8f1c2da3965bb49a3
+
+COCOAPODS: 1.2.0
