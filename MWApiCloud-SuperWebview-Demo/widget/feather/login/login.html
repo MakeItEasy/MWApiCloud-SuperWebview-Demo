@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css"/>
+    <style>
+    	.header {
+            padding: 2.5rem 0.5rem 2rem 0.5rem;
+        }
+    </style>
+</head>
+<body>
+	<header class="aui-bar aui-bar-nav aui-text-left header" id="header">
+        <h1 style="text-align: center;">
+            欢迎使用<br>请登录
+        </h1>
+    </header>
+    <div id="content">
+    		<div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-form-list">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label-icon">
+                        <i class="aui-iconfont aui-icon-mobile"></i>
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="手机号">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label-icon">
+                        <i class="aui-iconfont aui-icon-lock"></i>
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="password" placeholder="密码">
+                    </div>
+                    <div class="aui-list-item-label-icon">
+                        <i class="aui-iconfont aui-icon-display"></i>
+                    </div>
+                </div>
+            </li>
+            <div style="padding: 20px">
+            	<div class="aui-btn aui-btn-info aui-btn-block" onclick="login();">登录</div>
+            </div>
+        </ul>
+    </div>
+    </div>
+	
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	function login() {
+        api.openFrame({
+	        name: 'home',
+	        url: '../home/home.html',
+                      showProgress: true,
+                      animation: {
+                      type: "movein"
+                      }
+        });
+	}
+	apiready = function(){
+        var amapLocation = api.require('aMapLocation');
+        var param = { accuracy: 100, filter: 1, autoStop: true };
+        var resultCallback = function(ret, err) {
+            if (ret.status) {
+                alert("经度：" + ret.longitude + "\n纬度：" + ret.latitude + "\n时间：" + ret.timestamp);
+            } else {
+                alert(err.code + ',' + err.msg);
+            }
+        }
+        amapLocation.startLocation(param, resultCallback);
+	};
+</script>
+</html>

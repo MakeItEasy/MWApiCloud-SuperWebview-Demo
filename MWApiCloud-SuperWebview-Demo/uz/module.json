@@ -1,0 +1,14 @@
+[ {
+     "name":"aMapLocation",
+     "class":"AMapLocationModule",
+     "methods":["startLocation", "stopLocation"],
+     "launchClassMethod":"launch"
+ }
+,{
+    "name":"mam",
+    "class":"UZMAM",
+    "methods":["checkUpdate","addEvent","execCommand","showToastAlert","hideToastAlert"],
+    "syncMethods":["syncExecCommand"],
+    "launchClassMethod":"launch"
+}
+]

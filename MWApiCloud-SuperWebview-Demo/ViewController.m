@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MWWebViewController.h"
+#import "APIWidgetContainer.h"
 
 @interface ViewController ()
 
@@ -27,12 +28,29 @@
 }
 
 - (IBAction)openWebView:(id)sender {
+     [self openWebViewWithWidgetType];
+//    [self openWebViewWithWindowType];
+}
+
+- (void)openWebViewWithWindowType {
     // 这里的widget://表示widget的根目录路径
     NSString *url = @"widget://index.html";
     NSString *name = @"web view controller";
     MWWebViewController *webVC = [MWWebViewController windowContainerWithAttribute:@{@"url":url, @"name":name}];
     [webVC startLoad];
     [self.navigationController pushViewController:webVC animated:YES];
+//    [self presentViewController:webVC animated:YES completion:nil];
 }
+
+- (void)openWebViewWithWidgetType {
+    // 这里的widget://表示widget的根目录路径
+     NSString *url = @"widget://index.html";
+//    NSString *url = @"widget://feather/login/login.html";
+    // NSString *name = @"widget web view controller";
+    APIWidgetContainer *webVC = [APIWidgetContainer widgetContainerWithUrl:url];
+    [webVC startLoad];
+    [self presentViewController:webVC animated:YES completion:nil];
+}
+
 
 @end
